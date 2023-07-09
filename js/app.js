@@ -357,8 +357,8 @@ class App {
       .getElementById('reset')
       .addEventListener('click', this._reset.bind(this));
 
-    document
-      .getElementById('limit-modal')
+      document
+      .getElementById('limit-form')
       .addEventListener('submit', this._setLimit.bind(this));
   }
 
@@ -446,6 +446,14 @@ class App {
 
     const modalEl = document.getElementById('limit-modal');
     const modal = bootstrap.Modal.getInstance(modalEl);
+
+    modalEl.addEventListener('hidden.bs.modal', function () {
+      const modalBackdrop = document.querySelector('.modal-backdrop');
+      if (modalBackdrop) {
+        modalBackdrop.remove();
+      }
+    });
+
     modal.hide();
   }
 }

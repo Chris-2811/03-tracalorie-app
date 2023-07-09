@@ -8,6 +8,10 @@
   display: none;
 }/*# sourceMappingURL=style.css.map */
 
+.modal {
+  display: none;
+  background-color: transparent;
+}
 
 :root {
   --bs-blue: #0d6efd;
